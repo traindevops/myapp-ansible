@@ -1,2 +1,2 @@
 [servers]
-172.31.8.229 
+172.31.8.229 ansible_user=ubuntu
