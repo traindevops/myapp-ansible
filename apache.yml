@@ -1,0 +1,17 @@
+---
+- hosts: servers
+  become: true
+  tasks:
+    - name: Install packages
+      yum:
+        name: "httpd"
+        state: "present"
+    - name: start apache server
+      service:
+        name: httpd
+        state: started 
+        enabled: true 
+    - name: Deploy static website
+      copy:
+        src: index.html
+        dest: /var/www/html/
